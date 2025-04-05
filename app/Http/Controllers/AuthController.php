@@ -11,12 +11,12 @@ class AuthController extends Controller
 {
     function getLoginPage()
     {
-        return view('Authenticate.login');
+        return view('Authenticate/login');
     }
 
     function getRegisterPage()
     {
-        return view('Authenticate.register');
+        return view('Authenticate/register');
     }
     
     function register(Request $request)
