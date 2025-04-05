@@ -70,7 +70,7 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect(route('home'))->with('success', 'Login successful');
         }
-
+        
         return redirect()->back()->with('error', 'Invalid credentials');
     }
 

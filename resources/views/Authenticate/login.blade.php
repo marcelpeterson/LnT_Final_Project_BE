@@ -26,6 +26,9 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+            @if (session('error'))
+                <div class="text-danger mt-1 mb-2">{{ session('error') }}</div>
+            @endif
             <button type="submit" class="btn btn-primary mt-1" style="width: 10rem">Login</button>
             <a href="/register" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover mt-3">Don't have an account? Register here</a>
         </form>

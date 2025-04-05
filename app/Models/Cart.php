@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Invoice extends Model
+class Cart extends Model
 {
     protected $fillable = [
-        'number',
         'user_id',
-        'address',
-        'postcode',
-        'total_amount'
+        'item_id',
+        'quantity'
     ];
 
     public function user()
@@ -19,8 +17,8 @@ class Invoice extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function items()
+    public function item()
     {
-        return $this->hasMany(InvoiceItem::class);
+        return $this->belongsTo(Item::class);
     }
 }
